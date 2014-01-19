@@ -7,7 +7,6 @@ function Nametags:__init()
     self.player_enabled     = true
     self.vehicle_enabled    = false
     self.minimap_enabled    = true
-    self.debug_text         = false
 
     self.player_limit       = 500
     self.vehicle_limit      = 500
@@ -346,7 +345,7 @@ function Nametags:WindowClosed( args )
 end
 
 function Nametags:ModulesLoad()
-    Events:FireRegisteredEvent( "HelpAddItem",
+    Events:Fire( "HelpAddItem",
         {
             name = "Nametags",
             text = 
@@ -358,7 +357,7 @@ function Nametags:ModulesLoad()
 end
 
 function Nametags:ModuleUnload()
-    Events:FireRegisteredEvent( "HelpRemoveItem",
+    Events:Fire( "HelpRemoveItem",
         {
             name = "Nametags"
         } )
